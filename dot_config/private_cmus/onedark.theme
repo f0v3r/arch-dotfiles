@@ -1,0 +1,42 @@
+### 'Onedark' theme for CMus
+
+### cmd background color
+set color_cmdline_bg=default
+### cmd foreground color
+set color_cmdline_fg=220
+### error text color
+set color_error=167
+### info text color
+set color_info=231
+### separator color
+set color_separator=192
+### progress bar background color
+set color_statusline_bg=default
+### progress bar foreground color
+set color_statusline_fg=156
+### bottom title line background
+set color_titleline_bg=032
+### bottom title line foreground
+set color_titleline_fg=236
+### global backgrond
+set color_win_bg=default
+### currently playing in a list
+set color_win_cur=156
+### unknown
+set color_win_cur_sel_bg=156
+### unknown
+set color_win_cur_sel_fg=016
+### unknown
+set color_win_dir=032
+### list text color
+set color_win_fg=179
+### unknown
+set color_win_inactive_cur_sel_bg=default
+### unknown
+set color_win_inactive_cur_sel_fg=135
+set color_win_inactive_sel_bg=196
+set color_win_inactive_sel_fg=135
+set color_win_sel_bg=156
+set color_win_sel_fg=236
+set color_win_title_bg=135
+set color_win_title_fg=236

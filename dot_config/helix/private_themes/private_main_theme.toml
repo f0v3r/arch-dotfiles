@@ -1,0 +1,7 @@
+inherits = "monokai_pro_spectrum"
+
+"ui.statusline.normal" = {fg = "black", bg = "light-green"}
+"ui.statusline.insert" = {fg = "black", bg = "light-red"}
+"ui.statusline.select" = {fg = "black", bg = "light-magenta"}
+
+"ui.background" = {fg = "foreground"}

@@ -1,0 +1,15 @@
+#theme = "monokai_pro_spectrum"
+#theme = "main_theme"
+#theme = "base16_own"
+theme = "mocha"
+
+[editor]
+color-modes = true
+bufferline = "always"
+default-yank-register = "+"
+line-number = "relative"
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"

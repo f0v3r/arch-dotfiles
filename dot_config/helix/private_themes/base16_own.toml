@@ -1,0 +1,10 @@
+#base theme
+inherits = "base16_terminal"
+#remove background
+"ui.background" = {}
+#make comments dim
+"comment" = { fg = "white", modifiers = ["dim"]}
+#mode colors
+"ui.statusline.normal" = {fg = "black", bg = "light-green"}
+"ui.statusline.insert" = {fg = "black", bg = "light-red"}
+"ui.statusline.select" = {fg = "black", bg = "light-magenta"}

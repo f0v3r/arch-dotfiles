@@ -1,0 +1,109 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "modules": [
+    "title",
+    "separator",
+    {
+      "type": "datetime",
+      "format": "{year} {month-name} {day-in-month}, {weekday}, {hour-pretty}:{minute-pretty}",
+    },
+    "weather",
+    // System Information
+    {
+      "type": "custom",
+      "format": "\u001b[94m┌───────────────────── System ─────────────────────┐\u001b[0m",
+    },
+    {
+      "type": "os",
+      "keyColor": "94",
+      "format": "{name} {version-id} {variant}",
+    },
+    {
+      "type": "kernel",
+      "keyColor": "94",
+      "format": "{sysname} {release}",
+    },
+    "host",
+    {
+      "type": "uptime",
+      "keyColor": "94",
+    },
+
+    // Hardware Section
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[31m┌──────────────────── Hardware ────────────────────┐\u001b[0m",
+    },
+    {
+      "type": "cpu",
+      "keyColor": "red",
+      "format": "{name}",
+    },
+    {
+      "type": "cpuusage",
+      "keyColor": "red",
+    },
+    {
+      "type": "gpu",
+      "keyColor": "93",
+      "format": "{vendor} {name}",
+    },
+    {
+      "type": "memory",
+      "keyColor": "green",
+    },
+
+    // Display Section
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[95m┌──────────────────── Display ─────────────────────┐\u001b[0m",
+    },
+    // {
+    //   "type": "display",
+    //   "keyColor": "magenta",
+    //   "format": "{width}x{height} @ {refresh-rate}, {rotation}",
+    // },
+    {
+      "type": "de",
+      "keyColor": "magenta",
+    },
+    {
+      "type": "wm",
+      "keyColor": "magenta",
+    },
+
+    // Terminal Section
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[36m┌──────────────────── Terminal ────────────────────┐\u001b[0m",
+    },
+    {
+      "type": "terminal",
+      "keyColor": "cyan",
+    },
+    {
+      "type": "shell",
+      "keyColor": "cyan",
+    },
+
+    // Miscellaneous
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[32m┌────────────────────── Misc ──────────────────────┐\u001b[0m",
+    },
+    {
+      "type": "packages",
+      "keyColor": "green",
+    },
+    {
+      "type": "editor",
+      "keyColor": "green",
+    },
+    "break",
+    "colors",
+  ],
+}
