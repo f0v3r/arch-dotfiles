@@ -2,5 +2,5 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-set -x EDITOR hx
-set -x VISUAL hx
+set -x EDITOR helix
+set -x VISUAL helix
