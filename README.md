@@ -44,9 +44,9 @@
 
     - Interface Text: [SF Pro Display](https://developer.apple.com/fonts/)
 
-    - Document Text: [SF Pro Display](Fonts - Apple Developer](https://developer.apple.com/fonts/)
+    - Document Text: [SF Pro Display](https://developer.apple.com/fonts/)
 
-    - Monospace Text: [SF Mono](Fonts - Apple Developer](https://developer.apple.com/fonts/)
+    - Monospace Text: [SF Mono](https://developer.apple.com/fonts/)
 
 **TERMINAL FONT:** [Maple Mono NF](https://github.com/subframe7536/Maple-font)
 
