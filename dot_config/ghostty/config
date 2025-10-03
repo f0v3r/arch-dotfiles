@@ -49,4 +49,4 @@ font-family = "Maple Mono NF"
 window-height = 25
 window-width = 100
 
-background-opacity = 0.5
+#background-opacity = 0.5
