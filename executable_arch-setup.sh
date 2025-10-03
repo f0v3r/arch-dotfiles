@@ -68,6 +68,7 @@ OFFICIAL_PACKAGES=(
     partitionmanager
     7zip
     yazi
+    obsidian
 )
 
 AUR_PACKAGES=(
