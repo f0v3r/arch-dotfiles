@@ -2,7 +2,7 @@
 
 ---
 
-![banner](/image.png)
+![banner](/fish-obfuscated.png)
 
 ---
 
