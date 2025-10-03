@@ -8,9 +8,9 @@
 
 ## ℹ️ INFO
 
-**OS:** [Linux Fedora](https://fedoraproject.org/)
+**OS:** [Arch Linux](https://archlinux.org/)
 
-**DE:** [Gnome](https://www.gnome.org/)
+**DE:** [KDE Plasma](https://kde.org/plasma-desktop//)
 
 **TERMINAL:** [Ghostty](https://ghostty.org/)
 
@@ -42,13 +42,13 @@
 
 **SYSTEM FONT:** 
 
-    - Interface Text: [SF Pro Display]([Fonts - Apple Developer](https://developer.apple.com/fonts/))
+    - Interface Text: [SF Pro Display](https://developer.apple.com/fonts/)
 
-    - Document Text: [SF Pro Display]([Fonts - Apple Developer](https://developer.apple.com/fonts/))
+    - Document Text: [SF Pro Display](Fonts - Apple Developer](https://developer.apple.com/fonts/)
 
-    - Monospace Text: [SF Mono]([Fonts - Apple Developer](https://developer.apple.com/fonts/))
+    - Monospace Text: [SF Mono](Fonts - Apple Developer](https://developer.apple.com/fonts/)
 
-**TERMINAL FONT:** [Maple Mono NF]([GitHub - subframe7536/maple-font: Maple Mono: Open source monospace font with round corner, ligatures and Nerd-Font icons for IDE and terminal, fine-grained customization options. 带连字和控制台图标的圆角等宽字体，中英文宽度完美2:1，细粒度的自定义选项](https://github.com/subframe7536/Maple-font))
+**TERMINAL FONT:** [Maple Mono NF](https://github.com/subframe7536/Maple-font)
 
 ---
 
