@@ -10,7 +10,7 @@
 
 **OS:** [Arch Linux](https://archlinux.org/)
 
-**DE:** [KDE Plasma](https://kde.org/plasma-desktop//)
+**WM:** [Sway](https://swaywm.org/)
 
 **TERMINAL:** [Ghostty](https://ghostty.org/)
 
@@ -39,6 +39,8 @@
 ---
 
 ## 🔣 MISC
+
+**LAUNCHER:** [Rofi](https://github.com/davatorium/rofi)
 
 **SYSTEM FONT:** 
 
