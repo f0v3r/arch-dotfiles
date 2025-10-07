@@ -41,7 +41,7 @@ for_window [class=".*"] border pixel 5
 default_floating_border normal
 
 #cursor
-seat seat0 xcursor_theme capitaine-cursors-light 26
+seat seat0 xcursor_theme capitaine-cursors-light 32
 
 ### Variables
 #
@@ -57,12 +57,13 @@ set $term ghostty
 # Your preferred application launcher
 set $menu rofi -show drun
 # set file explorer
-set $fileexp dolphin
+set $fileexp ghostty -e yazi
 
 ### Output configuration
 #
 #wallpaper
-output * bg /home/franek/Pictures/Wallpapers/Wallpapers/arch-black-4k.png fill
+#output * bg /home/franek/Pictures/Wallpapers/Wallpapers/arch-black-4k.png fill
+output * bg #1e1e2e solid_color
 #display
 output DP-1 resolution 3840x2160@59.997Hz scale 1.15 position 0,0
 
