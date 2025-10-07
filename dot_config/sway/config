@@ -14,10 +14,10 @@ client.background        $base
 
 # bar
 bar {
-    status_command waybar
+    status_command exec ~/.config/sway/status.sh
     position top
-    font pango: "SF Pro Rounded Regular 12"
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    font pango: "Maple Mono NF"
+    #status_command while date +'%Y-%m-%d %X'; do sleep 1; done
   colors {
     background         313244
     statusline         $text
@@ -62,8 +62,8 @@ set $fileexp ghostty -e yazi
 ### Output configuration
 #
 #wallpaper
-#output * bg /home/franek/Pictures/Wallpapers/Wallpapers/arch-black-4k.png fill
-output * bg #1e1e2e solid_color
+output * bg /home/franek/Pictures/Wallpapers/Wallpapers/wallhaven-vqoo1p.jpg fill
+#output * bg #1e1e2e solid_color
 #display
 output DP-1 resolution 3840x2160@59.997Hz scale 1.15 position 0,0
 
