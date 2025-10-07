@@ -5,7 +5,7 @@
 
 while true; do
     # Date and time
-    datetime=$(date +'%A, %B %d, %Y | %I:%M:%S %p')
+    datetime=$(date +'%A, %B %d, %Y - %I:%M:%S %p')
     
     # CPU usage
     cpu=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
@@ -36,5 +36,5 @@ while true; do
     net="↓${rx_rate}KB/s ↑${tx_rate}KB/s"
     
     # Output with Nerd Font icons and separators
-    echo "  $cpu | 󱄄 $gpu |  $ram | 󰛳 $net |  $datetime"
+    echo "[  $cpu // 󱄄 $gpu //  $ram // 󰛳 $net //  $datetime ] "
 done
