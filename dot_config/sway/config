@@ -16,7 +16,7 @@ client.background        $base
 bar {
     status_command exec ~/.config/sway/status.sh
     position top
-    font pango: "Maple Mono NF"
+    font pango: "Maple Mono NF Bold"
     #status_command while date +'%Y-%m-%d %X'; do sleep 1; done
   colors {
     background         313244
