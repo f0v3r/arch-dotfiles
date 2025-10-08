@@ -6,7 +6,31 @@
 while true; do
     # Date and time
     datetime=$(date +'%A, %B %d, %Y - %I:%M:%S %p')
-    
+
+    if command -v playerctl &> /dev/null; then
+        status=$(playerctl status 2>/dev/null)
+        if [ "$status" = "Playing" ] || [ "$status" = "Paused" ]; then
+            music=$(playerctl metadata --format "{{ title }} - {{ artist }}" 2>/dev/null)
+            if [ -n "$music" ] && [ "$music" != " - " ]; then
+                # Truncate if too long
+                if [ ${#music} -gt 50 ]; then
+                    music="${music:0:47}..."
+                fi
+                # Add status icon
+                if [ "$status" = "Playing" ]; then
+                    music="  $music [] |"
+                else
+                    music="  $music [] |"
+                fi
+            else
+                music=""
+            fi
+        else
+            music=""
+        fi
+    else
+        music=""
+    fi   
     # CPU usage
     cpu=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
     
@@ -36,5 +60,5 @@ while true; do
     net="↓${rx_rate}KB/s ↑${tx_rate}KB/s"
     
     # Output with Nerd Font icons and separators
-    echo "[  $cpu // 󱄄 $gpu //  $ram // 󰛳 $net //  $datetime ] "
+    echo "$music [  $cpu // 󱄄 $gpu //  $ram // 󰛳 $net //  $datetime ] "
 done

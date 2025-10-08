@@ -44,23 +44,19 @@ default_floating_border normal
 seat seat0 xcursor_theme capitaine-cursors-light 32
 
 ### Variables
-#
-# Logo key. Use Mod1 for Alt.
+
 set $mod Mod1
-# Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
+#apps
 set $term ghostty
-# Your preferred application launcher
 set $menu rofi -show drun
-# set file explorer
 set $fileexp ghostty -e yazi
 
 ### Output configuration
-#
+
 #wallpaper
 output * bg /home/franek/Pictures/Wallpapers/Wallpapers/wallhaven-vqoo1p.jpg fill
 #output * bg #1e1e2e solid_color
@@ -74,10 +70,6 @@ exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
-
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
 #
@@ -158,30 +150,45 @@ exec swayidle -w \
 #
 # Workspaces:
 #
+    # Add custom workspaces
+    set $sw1 "1:󰖟  - WEB"
+    set $sw2 "2:  - TERMINAL"
+    set $sw3 "3:  - CODE"
+    set $sw4 "4:󰝚  - MUSIC"
+    set $sw5 "5:  - COMMS"
+    set $sw6 "6"
+    set $sw7 "7"
+    set $sw8 "8"
+    set $sw9 "9"
+    set $sw0 "0"
     # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
+    bindsym $mod+1 workspace $sw1
+    bindsym $mod+2 workspace $sw2
+    bindsym $mod+3 workspace $sw3
+    bindsym $mod+4 workspace $sw4
+    bindsym $mod+5 workspace $sw5
+    bindsym $mod+6 workspace $sw6
+    bindsym $mod+7 workspace $sw7
+    bindsym $mod+8 workspace $sw8
+    bindsym $mod+9 workspace $sw9
+    bindsym $mod+0 workspace $sw0
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
+    bindsym $mod+Shift+1 move container to workspace $sw1
+    bindsym $mod+Shift+2 move container to workspace $sw2
+    bindsym $mod+Shift+3 move container to workspace $sw3
+    bindsym $mod+Shift+4 move container to workspace $sw4
+    bindsym $mod+Shift+5 move container to workspace $sw5
+    bindsym $mod+Shift+6 move container to workspace $sw6
+    bindsym $mod+Shift+7 move container to workspace $sw7
+    bindsym $mod+Shift+8 move container to workspace $sw8
+    bindsym $mod+Shift+9 move container to workspace $sw9
+    bindsym $mod+Shift+0 move container to workspace $sw0
+    #assign programs to workspaces
+    assign [app_id="zen"] $sw1
+    assign [app_id="com.mitchellh.ghostty"] $sw2
+    assign [app_id="dev.zed.Zed"] $sw3
+    assign [class="Cider"] $sw4
+    
 #
 # Layout stuff:
 #
