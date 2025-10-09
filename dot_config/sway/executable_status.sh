@@ -30,7 +30,8 @@ while true; do
         fi
     else
         music=""
-    fi   
+    fi
+    
     # CPU usage
     cpu=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
     
@@ -46,6 +47,32 @@ while true; do
     
     # RAM usage
     ram=$(free -h | awk '/^Mem:/ {print $3 "/" $2}')
+
+    # Battery percentage and status
+    # Note: may need to change BAT0 to your battery name (e.g., BAT1)
+    if [ -f /sys/class/power_supply/BAT0/capacity ]; then
+        battery_percent=$(cat /sys/class/power_supply/BAT0/capacity)
+        battery_status=$(cat /sys/class/power_supply/BAT0/status)
+
+        if [ "$battery_status" = "Charging" ]; then
+            battery_icon="󰂄" # Charging icon
+        else
+            if [ "$battery_percent" -le 10 ]; then
+                battery_icon="󰁎" # Empty
+            elif [ "$battery_percent" -le 30 ]; then
+                battery_icon="󰁼" # Low
+            elif [ "$battery_percent" -le 60 ]; then
+                battery_icon="󰁾" # Medium
+            elif [ "$battery_percent" -le 90 ]; then
+                battery_icon="󰂀" # High
+            else
+                battery_icon="󰁹" # Full
+            fi
+        fi
+        battery="${battery_icon} ${battery_percent}%"
+    else
+        battery="N/A" # No battery found
+    fi
     
     # Network usage (current speed)
     rx_bytes_before=$(cat /sys/class/net/*/statistics/rx_bytes | awk '{sum+=$1} END {print sum}')
@@ -60,5 +87,5 @@ while true; do
     net="↓${rx_rate}KB/s ↑${tx_rate}KB/s"
     
     # Output with Nerd Font icons and separators
-    echo "$music [  $cpu // 󱄄 $gpu //  $ram // 󰛳 $net //  $datetime ] "
+    echo "$music [  $cpu // 󱄄 $gpu //  $ram // $battery // 󰛳 $net //  $datetime ] "
 done
