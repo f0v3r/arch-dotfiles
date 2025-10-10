@@ -65,7 +65,6 @@ OFFICIAL_PACKAGES=(
     bluez
     bluez-utils
     ttf-cascadia-mono-nerd
-    partitionmanager
     7zip
     yazi
     obsidian
