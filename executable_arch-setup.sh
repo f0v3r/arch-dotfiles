@@ -68,6 +68,7 @@ OFFICIAL_PACKAGES=(
     7zip
     yazi
     obsidian
+    caligula
 )
 
 AUR_PACKAGES=(
