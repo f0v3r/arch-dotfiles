@@ -1,0 +1,54 @@
+/* Rosé Pine Palette Conversion */
+
+/* widget text/foreground color */
+@define-color theme_fg_color #e0def4; /* Text */
+/* text color for entries, views and content in general */
+@define-color theme_text_color #e0def4; /* Text */
+/* widget base background color */
+@define-color theme_bg_color #1f1d2e; /* Surface */
+/* text widgets and the like base background color */
+@define-color theme_base_color #191724; /* Base */
+/* base background color of selections */
+@define-color theme_selected_bg_color #c4a7e7; /* Iris */
+/* text/foreground color of selections */
+@define-color theme_selected_fg_color #191724; /* Base */
+/* base background color of disabled widgets */
+@define-color insensitive_bg_color #26233a; /* Overlay */
+/* text foreground color of disabled widgets */
+@define-color insensitive_fg_color #6e6a86; /* Muted */
+/* disabled text widgets and the like base background color */
+@define-color insensitive_base_color #191724; /* Base */
+/* widget text/foreground color on backdrop windows */
+@define-color theme_unfocused_fg_color #908caa; /* Subtle */
+/* text color for entries, views and content in general on backdrop windows */
+@define-color theme_unfocused_text_color #e0def4; /* Text */
+/* widget base background color on backdrop windows */
+@define-color theme_unfocused_bg_color #1f1d2e; /* Surface */
+/* text widgets and the like base background color on backdrop windows */
+@define-color theme_unfocused_base_color #191724; /* Base */
+/* base background color of selections on backdrop windows */
+@define-color theme_unfocused_selected_bg_color #403d52; /* Highlight Med */
+/* text/foreground color of selections on backdrop windows */
+@define-color theme_unfocused_selected_fg_color #e0def4; /* Text */
+/* widgets main borders color */
+@define-color borders #524f67; /* Highlight High */
+/* widgets main borders color on backdrop windows */
+@define-color unfocused_borders #403d52; /* Highlight Med */
+/* these are pretty self explicative */
+@define-color warning_color #f6c177; /* Gold */
+@define-color error_color #eb6f92; /* Love */
+@define-color success_color #31748f; /* Pine */
+
+/* Aliases */
+@define-color fg_color #e0def4; /* Text */
+@define-color text_color #e0def4; /* Text */
+@define-color bg_color #1f1d2e; /* Surface */
+@define-color base_color #191724; /* Base */
+@define-color selected_bg_color #c4a7e7; /* Iris */
+@define-color selected_fg_color #191724; /* Base */
+@define-color unfocused_fg_color #908caa; /* Subtle */
+@define-color unfocused_text_color #e0def4; /* Text */
+@define-color unfocused_bg_color #1f1d2e; /* Surface */
+@define-color unfocused_base_color #191724; /* Base */
+@define-color unfocused_selected_bg_color #403d52; /* Highlight Med */
+@define-color unfocused_selected_fg_color #e0def4; /* Text */

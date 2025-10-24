@@ -1,0 +1,53 @@
+/* fg — main foreground text */
+@define-color theme_fg_color #d3c6aa;
+/* fg — main content text color */
+@define-color theme_text_color #d3c6aa;
+/* bg0 — main background */
+@define-color theme_bg_color #2d353b;
+/* bg1 — widget/content background */
+@define-color theme_base_color #323c41;
+/* aqua — selection background */
+@define-color theme_selected_bg_color #7fbbb3;
+/* bg0 — selection text */
+@define-color theme_selected_fg_color #2d353b;
+/* gray1 — disabled widget background */
+@define-color insensitive_bg_color #3a454a;
+/* gray2 — disabled text color */
+@define-color insensitive_fg_color #859289;
+/* bg1 — disabled text widget background */
+@define-color insensitive_base_color #323c41;
+/* gray2 — unfocused widget text */
+@define-color theme_unfocused_fg_color #859289;
+/* fg — unfocused content text */
+@define-color theme_unfocused_text_color #d3c6aa;
+/* bg0 — unfocused background */
+@define-color theme_unfocused_bg_color #2d353b;
+/* bg1 — unfocused text widget background */
+@define-color theme_unfocused_base_color #333c43;
+/* aqua — unfocused selection background */
+@define-color theme_unfocused_selected_bg_color #7fbbb3;
+/* bg0 — unfocused selection text */
+@define-color theme_unfocused_selected_fg_color #2d353b;
+/* gray1 — main border color */
+@define-color borders #3a454a;
+/* gray2 — unfocused border color */
+@define-color unfocused_borders #4b565c;
+/* yellow — warning color */
+@define-color warning_color #dbbc7f;
+/* red — error color */
+@define-color error_color #e67e80;
+/* green — success color */
+@define-color success_color #a7c080;
+/* aliases */
+@define-color fg_color #d3c6aa;
+@define-color text_color #d3c6aa;
+@define-color bg_color #2d353b;
+@define-color base_color #323c41;
+@define-color selected_bg_color #7fbbb3;
+@define-color selected_fg_color #2d353b;
+@define-color unfocused_fg_color #859289;
+@define-color unfocused_text_color #d3c6aa;
+@define-color unfocused_bg_color #2d353b;
+@define-color unfocused_base_color #333c43;
+@define-color unfocused_selected_bg_color #7fbbb3;
+@define-color unfocused_selected_fg_color #2d353b;

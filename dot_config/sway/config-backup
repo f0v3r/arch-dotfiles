@@ -3,73 +3,45 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-#include catppuccin-mocha
-#client.focused           $lavender $base $text  $rosewater $lavender
-#client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
-#client.unfocused         $overlay0 $base $text  $rosewater $overlay0
-#client.urgent            $peach    $base $peach $overlay0  $peach
-#client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
-#client.background        $base
-include rose-pine
-client.focused          $iris     $base     $text     $rose     $iris
-client.focused_inactive $highlight-high  $base     $text     $rose     $highlight-high
-client.unfocused        $highlight-high  $base     $text     $rose     $highlight-high
-client.urgent           $gold     $base     $gold     $muted    $gold
-client.placeholder      $surface  $base     $text     $surface  $surface
-client.background       $base
+include catppuccin-mocha
+# target
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
 
 #autoexec
 exec mako
-exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec autotiling -l 2
 
+# bar
 bar {
     status_command exec ~/.config/sway/status.sh
     position top
     font pango: "Maple Mono NF Bold"
+    #status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+  colors {
+    background         313244
+    statusline         $text
+    focused_statusline $text
+    focused_separator  $base
 
-    colors {
-        background           $surface
-        statusline           $text
-        focused_statusline   $text
-        separator            $base
-        focused_workspace    $iris     $iris      $base
-        active_workspace     $overlay  $overlay   $text
-        inactive_workspace   $base     $base      $text
-        urgent_workspace     $love     $love      $base
-    }
+    # target
+    focused_workspace  $base  $mauve    $crust
+    active_workspace   $base  $surface2 $text
+    inactive_workspace $base  $base     $text
+    urgent_workspace   $base  $red      $crust
+  }
 }
-
-# bar
-#bar {
-#    status_command exec ~/.config/sway/status.sh
-#    position top
-#    font pango: "Maple Mono NF Bold"
-#    #status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-#  colors {
-#    background         313244
-#    statusline         $text
-#    focused_statusline $text
-#    focused_separator  $base
-#
-#    # target
-#    focused_workspace  $base  $mauve    $crust
-#    active_workspace   $base  $surface2 $text
-#    inactive_workspace $base  $base     $text
-#    urgent_workspace   $base  $red      $crust
-#  }
-#}
 #gaps
 gaps outer 10px
 gaps inner 10px
 
 #borders
-default_border pixel 7
-for_window [class=".*"] border pixel 7
-#default_floating_border normal
-for_window [floating] border pixel 7
+default_border pixel 5
+for_window [class=".*"] border pixel 5
+default_floating_border normal
 
 #cursor
 seat seat0 xcursor_theme capitaine-cursors-light 32
@@ -82,26 +54,25 @@ set $down j
 set $up k
 set $right l
 #apps
-set $term alacritty
+set $term ghostty
 set $menu rofi -show drun
 set $fileexp ghostty -e yazi
 
 ### Output configuration
 
 #wallpaper
-#output * bg /home/franek/Pictures/Wallpapers/satellite.png fill
-output * bg /home/franek/Pictures/Wallpapers/wallpaper-theme-converter.png fill
+output * bg /home/franek/Pictures/Wallpapers/wallhaven-vqoo1p.jpg fill
 #output * bg #1e1e2e solid_color
 #display
 #output DP-1 resolution 2560x1440@59.997Hz scale 1.15 position 0,0
-output eDP-1 resolution 1920x1080@60Hz scale 1 position 0,1440
+output eDP-1 resolution 1920x1080@60Hz scale 1 position 2560,0
 output HDMI-A-1 resolution 2560x1440@59.997Hz scale 1 position 0,0
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
 exec swayidle -w \
-         timeout 300 'swaylock' \
+         timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
 
@@ -109,17 +80,17 @@ exec swayidle -w \
 #
 # Example configuration:
 #
-   input type:touchpad {
-       dwt enabled
-       tap enabled
-       natural_scroll enabled
-       middle_emulation enabled
-   }
-
-   input type:keyboard {
-       xkb_layout "us"
-   }
-
+#   input type:touchpad {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+#   input type:keyboard {
+#       xkb_layout "eu"
+#   }
+#
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
 
@@ -250,7 +221,7 @@ exec swayidle -w \
     bindsym $mod+a focus parent
 
     #lock computer
-    bindsym $mod+Ctrl+l exec 'swaylock'
+    bindsym $mod+Ctrl+l exec swaylock
 
 #
 # Scratchpad:

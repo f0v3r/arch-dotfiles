@@ -87,5 +87,5 @@ while true; do
     net="↓${rx_rate}KB/s ↑${tx_rate}KB/s"
     
     # Output with Nerd Font icons and separators
-    echo "$music [  $cpu //  $ram // $battery // 󰛳 $net //  $datetime ] "
+    echo "$music [  $cpu // 󱄄 $gpu //  $ram // $battery // 󰛳 $net //  $datetime ] "
 done
