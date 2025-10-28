@@ -28,7 +28,7 @@ exec autotiling -l 2
 bar {
     status_command exec ~/.config/sway/status.sh
     position top
-    font pango: "Maple Mono NF Bold"
+    font pango: "JetBrains Mono NL Bold"
 
     colors {
         background           $surface
