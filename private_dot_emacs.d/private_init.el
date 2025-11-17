@@ -16,12 +16,27 @@
 
 ;;font
 (set-face-attribute 'default nil
-	:font "FiraCode Nerd Font"
+	:font "Fira Code Nerd Font"
 	:height 140)
+	
+;;remove scrollbars
+(scroll-bar-mode -1)
+
+;;remove tool bar
+(tool-bar-mode -1)
 
 ;;start window size
 (add-to-list 'default-frame-alist '(width . 120))
 (add-to-list 'default-frame-alist '(height . 35))
+
+;;set TAB wudth
+(setq-default tab-width 4)
+
+;;add tab line at the top
+(global-tab-line-mode 1)
+
+;;auto close
+(electric-pair-mode 1)
 
 ;; -----------------------------------------------------------------
 ;; PACKAGE MANAGEMENT (MELPA & USE-PACKAGE)
@@ -61,14 +76,14 @@
 )
 
 (use-package treemacs-projectile
-	:after(treemacs-projectile)
+	:after(treemacs projectile)
 	:ensure t
 )
 
 (use-package treemacs-magit
-	:after (treemacs-magit)
+	:after (treemacs magit)
 	:ensure t
-)
+	)
 
 ;; -----------------------------------------------------------------
 ;; LSP & AUTOCOMPLETION
@@ -87,7 +102,7 @@
 	:hook(
 		(python-mode . lsp-deferred)
 		(rust-mode . lsp-deferred)
-		(golang-mode . lsp-deferred) ;; <-- (FIXED: Added space)
+		(go-mode . lsp-deferred)
 	)
 	:init
 	(setq lsp-keymap-prefix "C-c l"))
@@ -97,21 +112,12 @@
 	:ensure t
 	:commands lsp-ui-mode
 	:after lsp-mode
+	:hook (lsp-mode . lsp-ui-mode)
 )
 
-;; -----------------------------------------------------------------
-;; LANGUAGE-SPECIFIC LSP HELPERS (NEW!)
-;; -----------------------------------------------------------------
-;;
-;; These packages tell lsp-mode which server to use for each
-;; language. You MUST also install the servers on your computer.
-;;
-;; -----------------------------------------------------------------
-
-;; 1. PYTHON (using Pyright)
-(use-package lsp-jedi
-  :ensure t
-)
+;;add language configs
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(require 'config-go)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
