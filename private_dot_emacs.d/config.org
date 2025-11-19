@@ -1,0 +1,179 @@
+#+PROPERTY: header-args:emacs-lisp :tangle yes
+
+#+begin_src emacs-lisp
+;;;; -*- lexical-binding: t -*-
+#+end_src
+
+* UI
+
+enable whitespace mode
+
+#+begin_src emacs-lisp
+  (add-hook 'prog-mode-hook 'whitespace-mode)
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+#+end_src
+
+remove splash screen and startup message
+#+begin_src emacs-lisp
+  (setq inhibit-splash-screen t)
+  (setq inhibit-startup-message t)
+#+end_src
+
+add line numbers globally + relative
+#+begin_src emacs-lisp
+  (setq display-line-numbers-type 'relative)
+ ;;(global-display-line-numbers-mode t)
+#+end_src
+
+font
+#+begin_src emacs-lisp
+  (set-face-attribute 'default nil
+  		:font "JetBrainsMono Nerd Font" 
+  		:height 140)
+#+end_src
+
+remove UI elements
+#+begin_src emacs-lisp
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+#+end_src
+
+default window size
+#+begin_src emacs-lisp
+  (add-to-list 'default-frame-alist '(width . 120))
+  (add-to-list 'default-frame-alist '(height . 35))
+#+end_src
+
+set TAB width
+#+begin_src emacs-lisp
+  (setq-default tab-width 4)
+#+end_src
+
+add UI elements
+#+begin_src emacs-lisp
+  (global-tab-line-mode 1)
+#+end_src
+
+* BEHAVIOR
+
+auto close pairs
+#+begin_src emacs-lisp
+  (electric-pair-mode 1)
+#+end_src
+
+ignore case
+#+begin_src emacs-lisp
+  (setq read-file-name-completion-ignore-case t)
+  (setq read-buffer-completion-ignore-case t)
+  (setq completion-ignore-case t)
+#+end_src
+* ORG MODE VISUALS
+
+** BASIC UI
+
+enable indentations, wrap lines, non-monospaced fonts
+#+begin_src emacs-lisp
+  (defun org-mode-setup ()
+  (org-indent-mode)
+  (visual-line-mode 1)
+  )
+
+  (add-hook 'org-mode-hook 'org-mode-setup)
+#+end_src
+
+hide markers
+#+begin_src emacs-lisp
+(setq org-hide-emphasis-markers t)
+(setq org-ellipsis " .")
+#+end_src
+
+* PACKAGES
+
+** UI PACKAGES
+
+doom themes
+#+begin_src emacs-lisp
+  (use-package doom-themes
+    :ensure t
+    :config
+    (load-theme 'doom-horizon t))
+#+end_src
+
+bindings popups
+#+begin_src emacs-lisp
+  (use-package which-key
+    :ensure t
+    :config
+    (which-key-mode))
+#+end_src
+
+treemacs, projectile and magit
+#+begin_src emacs-lisp
+  (use-package treemacs
+    :ensure t
+    )
+
+  (use-package treemacs-projectile
+    :after(treemacs projectile)
+    :ensure t
+    )
+
+  (use-package treemacs-magit
+    :after (treemacs magit)
+    :ensure t
+    )
+#+end_src
+
+* LSP + AUTOCOMPLETION
+
+autocompletion
+#+begin_src emacs-lisp
+  (use-package company
+    :ensure t
+    :hook (after-init . global-company-mode))
+#+end_src
+
+lsp
+#+begin_src emacs-lisp
+  (use-package lsp-mode
+    :ensure t
+    :commands (lsp lsp-deferred)
+    :init
+    (setq lsp-keyman-prefix "C-c l"))
+#+end_src
+
+* LANGUAGES
+
+** PYTHON
+
+#+begin_src emacs-lisp
+        (use-package lsp-mode
+          :ensure t
+          :hook (python-mode . lsp-deferred)
+          :config
+          (setq lsp-python-plugins-lypint-enabled nil)
+          (setq lsp-python-plugins-flake8-enabled nil)
+          )
+
+        (use-package lsp-pyright
+          :ensure t
+          :after lsp-mode
+          :hook (python-mode . (lambda ()
+      				   (require 'lsp-pyright)
+    				   (lsp-deferred)))
+        )
+#+end_src
+
+** GO
+
+#+begin_src emacs-lisp
+  (use-package go-mode
+    :ensure t
+    :mode "\\.go\\'"
+    :init
+    (add-to-list 'exec-path "/home/franek/go/bin")
+    (setenv "PATH" (concat "/home/franek/go/bin:" (getenv "PATH")))
+    :hook ((go-mode . eglot-ensure)
+  	   (before-save . gofmt-before-save))
+  )
+#+end_src
