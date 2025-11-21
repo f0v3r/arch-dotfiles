@@ -67,6 +67,12 @@ ignore case
   (setq read-buffer-completion-ignore-case t)
   (setq completion-ignore-case t)
 #+end_src
+
+disable file backup
+#+begin_src emacs-lisp
+(setq make-backup-files nil)
+#+end_src
+
 * ORG MODE VISUALS
 
 ** BASIC UI
