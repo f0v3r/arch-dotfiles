@@ -1,8 +1,4 @@
-#theme = "monokai_pro_spectrum"
-#theme = "main_theme"
-theme = "base16_own"
-#theme = "mocha"
-#theme = "rose-pine-transparent"
+theme = "soda"
 
 [editor]
 color-modes = true
