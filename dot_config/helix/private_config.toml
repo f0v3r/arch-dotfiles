@@ -13,7 +13,10 @@ select = "underline"
 
 [editor.statusline]
 left = ["mode", "spinner", "diagnostics"]
-right = ["version-control", "position", "file-encoding"]
+right = ["version-control", "position", "selections", "file-encoding"]
+mode.normal = "normal"
+mode.insert = "insert"
+mode.select = "select"
 
 [editor.inline-diagnostics]
 cursor-line = "hint"
